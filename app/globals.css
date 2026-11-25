@@ -1,0 +1,80 @@
+/* e-Ukraine: put the font files into /public/fonts (see README). Falls back to Inter. */
+@font-face { font-family: "e-Ukraine"; src: url("/fonts/e-Ukraine-Light.woff2") format("woff2"), url("/fonts/e-Ukraine-Light.otf") format("opentype"); font-weight: 300; font-display: swap; }
+@font-face { font-family: "e-Ukraine"; src: url("/fonts/e-Ukraine-Regular.woff2") format("woff2"), url("/fonts/e-Ukraine-Regular.otf") format("opentype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "e-Ukraine"; src: url("/fonts/e-Ukraine-Medium.woff2") format("woff2"), url("/fonts/e-Ukraine-Medium.otf") format("opentype"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "e-Ukraine"; src: url("/fonts/e-Ukraine-Bold.woff2") format("woff2"), url("/fonts/e-Ukraine-Bold.otf") format("opentype"); font-weight: 700; font-display: swap; }
+
+:root {
+  --yellow: #F3FF00; --ink: #202220; --g2: #373935; --paper: #EDEEE9; --muted: #5C5E58; --hair: #D1D2CC;
+  --sans: "e-Ukraine", var(--font-inter), Inter, system-ui, sans-serif;
+  --monof: var(--font-mono), "JetBrains Mono", monospace;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); }
+a { color: inherit; text-decoration: none; }
+button, input, textarea, select { font: inherit; color: inherit; }
+
+.topbar { background: var(--ink); color: #fff; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px; position: sticky; top: 0; z-index: 10; }
+.brand { display: flex; align-items: center; gap: 12px; font-family: var(--monof); font-weight: 500; letter-spacing: .02em; font-size: 14px; }
+.brand b { color: var(--yellow); font-weight: 500; }
+.container { max-width: 1240px; margin: 0 auto; padding: 40px 32px 80px; }
+.eyebrow { font-family: var(--monof); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+.eyebrow::before { content: ""; width: 10px; height: 10px; background: var(--yellow); display: inline-block; }
+h1.page-title { font-size: 48px; line-height: 1; letter-spacing: -.02em; margin: 16px 0 12px; }
+.lead { color: var(--muted); font-size: 18px; max-width: 640px; margin: 0 0 40px; }
+
+.section-label { margin: 40px 0 16px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 20px; }
+.card { background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid transparent; transition: border-color .15s, transform .15s; display: flex; flex-direction: column; }
+.card:hover { border-color: var(--ink); transform: translateY(-2px); }
+.card .thumb { background: #E3E4DE; display: flex; align-items: center; justify-content: center; height: 220px; padding: 20px; }
+.card .meta { padding: 18px 20px 20px; }
+.card h3 { margin: 0 0 6px; font-size: 19px; }
+.card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.4; }
+.thumb-shadow { box-shadow: 0 6px 24px rgba(32,34,32,.18); }
+
+.editor { display: grid; grid-template-columns: 400px 1fr; min-height: calc(100vh - 64px); }
+.panel { background: #fff; border-right: 1px solid var(--hair); padding: 24px; overflow-y: auto; max-height: calc(100vh - 64px); position: sticky; top: 64px; }
+.panel h2 { font-size: 26px; margin: 8px 0 4px; letter-spacing: -.01em; }
+.panel .desc { color: var(--muted); font-size: 14px; margin: 0 0 20px; }
+.field { margin-bottom: 16px; }
+.field label { display: flex; justify-content: space-between; font-size: 13px; font-weight: 500; margin-bottom: 6px; }
+.field label span { font-family: var(--monof); color: var(--muted); font-weight: 400; font-size: 11px; }
+.field label span.over { color: #C0261B; }
+.input, .textarea, .select { width: 100%; border: 1px solid var(--hair); border-radius: 10px; padding: 10px 12px; background: #fff; outline: none; font-size: 15px; }
+.input:focus, .textarea:focus, .select:focus { border-color: var(--ink); }
+.textarea { min-height: 76px; resize: vertical; line-height: 1.4; }
+.hint { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+.ai { background: var(--ink); color: #fff; border-radius: 14px; padding: 16px; margin-bottom: 24px; }
+.ai .eyebrow { color: #C9CAC4; }
+.ai textarea { background: var(--g2); border-color: var(--g2); color: #fff; margin-top: 10px; }
+.ai textarea::placeholder { color: #9a9c96; }
+.ai .err { color: #FFB4AB; font-size: 13px; margin-top: 8px; }
+
+.btn { border: 0; border-radius: 10px; padding: 11px 16px; font-weight: 700; cursor: pointer; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; }
+.btn:disabled { opacity: .5; cursor: default; }
+.btn-yellow { background: var(--yellow); color: var(--ink); }
+.btn-dark { background: var(--ink); color: var(--yellow); }
+.btn-ghost { background: transparent; border: 1px solid var(--hair); font-weight: 500; }
+.btn-ghost:hover { border-color: var(--ink); }
+.btn-sm { padding: 6px 10px; font-size: 12px; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.stage { padding: 32px; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.stage-bar { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.pages { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.page-label { font-family: var(--monof); font-size: 11px; color: var(--muted); margin-bottom: 8px; }
+
+.slide-item { border: 1px solid var(--hair); border-radius: 12px; padding: 12px; margin-bottom: 10px; background: #FAFAF8; }
+.slide-item .head { display: flex; gap: 6px; align-items: center; margin-bottom: 8px; }
+.slide-item .head .num { font-family: var(--monof); font-size: 12px; color: var(--muted); width: 22px; }
+.slide-item .head select { flex: 1; padding: 6px 8px; font-size: 13px; }
+.icon-btn { background: none; border: 1px solid var(--hair); border-radius: 8px; width: 28px; height: 28px; cursor: pointer; font-size: 13px; }
+.icon-btn:hover { border-color: var(--ink); }
+.slide-item .input, .slide-item .textarea { font-size: 14px; margin-top: 6px; }
+
+@media (max-width: 900px) {
+  .editor { grid-template-columns: 1fr; }
+  .panel { position: static; max-height: none; border-right: 0; }
+}
