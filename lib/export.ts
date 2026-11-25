@@ -42,7 +42,9 @@ export async function exportPdf(t: Template, nodes: HTMLElement[], base: string)
     if (i > 0) pdf.addPage([w, h], w > h ? "landscape" : "portrait");
     pdf.addImage(src, "PNG", 0, 0, w, h);
   });
-  pdf.save(`${slug(base)}.pdf`);
+  const url = URL.createObjectURL(pdf.output("blob"));
+  download(url, `${slug(base)}.pdf`);
+  setTimeout(() => URL.revokeObjectURL(url), 10_000);
 }
 
 async function svgToPng(svg: string, size: number): Promise<string> {
