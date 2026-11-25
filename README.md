@@ -14,9 +14,9 @@
 Бренд (кольори, лого, правила) береться зі скілу `mk-brand-design`, див. `lib/brand.ts`.
 
 ## Шрифт e-Ukraine
-Покладіть файли шрифту в `public/fonts/` з такими назвами (woff2 або otf):
-`e-Ukraine-Light`, `e-Ukraine-Regular`, `e-Ukraine-Medium`, `e-Ukraine-Bold`.
-Поки файлів немає, сайт використовує Inter.
+Файли шрифту лежать у `public/fonts/` (Light, Regular, Medium, Bold, формат otf).
+Шрифт e-Ukraine розповсюджує Мінцифри (plan.diia.gov.ua). Якщо якогось файлу немає, сайт підставляє Inter.
+Щоб презентація у PPTX відкривалася з правильним шрифтом, e-Ukraine має бути встановлений на комп'ютері.
 
 ## AI-помічник
 Потрібна змінна середовища `ANTHROPIC_API_KEY` (Vercel → Project → Settings → Environment Variables).

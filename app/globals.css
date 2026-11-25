@@ -1,8 +1,8 @@
-/* e-Ukraine: put the font files into /public/fonts (see README). Falls back to Inter. */
-@font-face { font-family: "e-Ukraine"; src: url("/fonts/e-Ukraine-Light.woff2") format("woff2"), url("/fonts/e-Ukraine-Light.otf") format("opentype"); font-weight: 300; font-display: swap; }
-@font-face { font-family: "e-Ukraine"; src: url("/fonts/e-Ukraine-Regular.woff2") format("woff2"), url("/fonts/e-Ukraine-Regular.otf") format("opentype"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "e-Ukraine"; src: url("/fonts/e-Ukraine-Medium.woff2") format("woff2"), url("/fonts/e-Ukraine-Medium.otf") format("opentype"); font-weight: 500; font-display: swap; }
-@font-face { font-family: "e-Ukraine"; src: url("/fonts/e-Ukraine-Bold.woff2") format("woff2"), url("/fonts/e-Ukraine-Bold.otf") format("opentype"); font-weight: 700; font-display: swap; }
+/* e-Ukraine brand font (public/fonts). Falls back to Inter if a file is missing. */
+@font-face { font-family: "e-Ukraine"; src: url("/fonts/e-Ukraine-Light.otf") format("opentype"); font-weight: 300; font-display: swap; }
+@font-face { font-family: "e-Ukraine"; src: url("/fonts/e-Ukraine-Regular.otf") format("opentype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "e-Ukraine"; src: url("/fonts/e-Ukraine-Medium.otf") format("opentype"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "e-Ukraine"; src: url("/fonts/e-Ukraine-Bold.otf") format("opentype"); font-weight: 700; font-display: swap; }
 
 :root {
   --yellow: #F3FF00; --ink: #202220; --g2: #373935; --paper: #EDEEE9; --muted: #5C5E58; --hair: #D1D2CC;
